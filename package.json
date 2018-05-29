@@ -1,0 +1,55 @@
+{
+  "name": "timing.io",
+  "version": "1.0.0",
+  "description": "Timing.js is a small set of helpers for working with the [Navigation Timing API]",
+  "author": "Allex Wang <allex.wxn@gmail.com>",
+  "main": "lib/timing.min.js",
+  "module": "lib/timing.esm.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/allex/timing.io.git"
+  },
+  "keywords": [
+    "timing"
+  ],
+  "scripts": {
+    "build": "npm run lint:fix && rollup-bundle --config ./.fssrc.js",
+    "release": "node .build/release.js",
+    "prepare": "npm run build",
+    "lint": "standard",
+    "lint:fix": "standard --fix",
+    "test": "npm run lint"
+  },
+  "dependencies": {
+    "@fedor/cookie": "^1.0.0",
+    "@fedor/global": "^1.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "latest",
+    "@babel/plugin-external-helpers": "^7.0.0-beta.47",
+    "@babel/plugin-transform-runtime": "^7.0.0-beta.47",
+    "@babel/preset-env": "^7.0.0-beta.47",
+    "@fedor/standard": "latest",
+    "babel-plugin-transform-decorators-legacy": "latest",
+    "rollup-worker": "next"
+  },
+  "peerDependencies": {},
+  "maintainers": [
+    {
+      "name": "allex",
+      "email": "allex.wxn@gmail.com"
+    }
+  ],
+  "fss": {
+    "distname": "timing",
+    "library": "timing",
+    "cdnPrefix": "//s2.fedor.io/-/"
+  },
+  "standard": {
+    "ignore": [
+      "*.tmp",
+      "lib"
+    ]
+  }
+}
