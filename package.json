@@ -1,6 +1,6 @@
 {
   "name": "timing.io",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Timing.js is a small set of helpers for working with the [Navigation Timing API]",
   "author": "Allex Wang <allex.wxn@gmail.com>",
   "main": "lib/timing.min.js",
@@ -22,8 +22,6 @@
     "test": "npm run lint"
   },
   "dependencies": {
-    "@fedor/cookie": "^1.0.0",
-    "@fedor/global": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "latest",
