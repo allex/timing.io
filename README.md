@@ -32,6 +32,7 @@ connectTime: 105 // New
 domComplete: 1411307463437
 domContentLoadedEventEnd: 1411307463391
 domContentLoadedEventStart: 1411307463391
+domContentReadyTime: 690 // New
 domInteractive: 1411307463391
 domLoading: 1411307463365
 domReadyTime: 46 // New

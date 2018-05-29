@@ -67,8 +67,12 @@ timing.getTimes = (opts) => {
 
     // Total time from start to load
     api.loadTime = timing.loadEventEnd - timing.fetchStart
+
+    // Time of dom content ready, seem like $.ready() fired.
+    api.domContentReadyTime = api.domContentLoadedEventEnd - api.navigationStart
     // Time spent constructing the DOM tree
     api.domReadyTime = timing.domComplete - timing.domInteractive
+
     // Time consumed preparing the new page
     api.readyStart = timing.fetchStart - timing.navigationStart
     // Time spent during redirection
