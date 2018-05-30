@@ -61,7 +61,7 @@ module.exports = {
           banner
         },
         {
-          format: 'cjs',
+          format: 'es',
           file: 'timing.esm.js'
         }
       ]
