@@ -126,7 +126,7 @@ timing.r('finishLoadTime', () => {
   }
 })
 
-// Time to first paint
+// Time to first paint -> https://css-tricks.com/paint-timing-api/
 timing.r('firstPaintTime', (api) => {
   // All times are relative times to the start time within the
   // same objects
@@ -135,8 +135,8 @@ timing.r('firstPaintTime', (api) => {
 
   // https://developers.google.com/web/updates/2017/12/chrome-loadtimes-deprecated
   if (window.PerformancePaintTiming) {
-    const fpEntry = performance.getEntriesByType('paint')[0]
-    firstPaintTime = (fpEntry.startTime + performance.timeOrigin) / 1000
+    const fpEntry = performance.getEntriesByType('paint')[0] || 0
+    firstPaintTime = ((fpEntry.startTime || 0) + performance.timeOrigin) / 1000
   } else if (window.chrome && window.chrome.loadTimes) { // Chrome
     // Convert to ms
     firstPaint = window.chrome.loadTimes().firstPaintTime * 1000
