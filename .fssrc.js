@@ -1,6 +1,8 @@
 // vim: set ft=javascript fdm=marker et ff=unix tw=80 sw=2:
 
-const path = require('path')
+import path from 'path'
+import json from 'rollup-plugin-json'
+import babel from 'rollup-plugin-babel'
 const { version, name, author, dependencies } = require('./package.json')
 
 const banner =
@@ -53,6 +55,16 @@ module.exports = {
     },
     entry: [ {
       input: 'src/index.js',
+      plugins: [
+        json({
+          exclude: 'node_modules/**',
+          preferConst: true, // Default: false
+          indent: '  '
+        }),
+        babel,
+        'resolve',
+        'commonjs'
+      ],
       targets: [
         {
           format: 'umd',

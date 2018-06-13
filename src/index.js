@@ -3,6 +3,8 @@
  * timing.getTimes();
  **/
 
+import { version } from '../package.json'
+
 const isNumeric = n => !isNaN(parseFloat(n)) && isFinite(n)
 
 const result = (v, ...args) =>
@@ -149,5 +151,7 @@ timing.r('firstPaintTime', (api) => {
   api.firstPaint = firstPaint
   api.firstPaintTime = firstPaintTime
 })
+
+timing.version = version
 
 export default timing
