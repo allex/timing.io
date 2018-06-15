@@ -1,6 +1,6 @@
 {
   "name": "timing.io",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Timing.js is a small set of helpers for working with the [Navigation Timing API]",
   "author": "Allex Wang <allex.wxn@gmail.com>",
   "main": "lib/timing.min.js",
