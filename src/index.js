@@ -40,6 +40,8 @@ const timing = window.timing || (window.timing = {
 // cache customize metrics implements
 const metricsCache = {}
 
+const start = +new Date
+
 /**
  * Outputs extended measurements using Navigation Timing API
  * @param  Object opts Options (simple (bool) - opts out of full data view)
@@ -57,7 +59,7 @@ timing.getTimes = (opts) => {
   opts = opts || {}
 
   if (timing) {
-    if (opts && !opts.simple) {
+    if (!opts.simple) {
       for (var k in timing) {
         // hasOwnProperty does not work because properties are
         // added by modifying the object prototype
@@ -66,6 +68,9 @@ timing.getTimes = (opts) => {
         }
       }
     }
+
+    // FIX navigationStart is zero when called before the `window.onload()`
+    api.navigationStart = api.navigationStart || start
 
     // Total time from start to load
     api.loadTime = timing.loadEventEnd - timing.fetchStart
